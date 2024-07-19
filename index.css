@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #320A28;
+}
+
+.scoreboard-header {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h3, h1 {
+    color: #E0D68A;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+.score {
+    padding: 30px;
+    width: 200px;
+    text-align: center;
+    margin: 40px 0 0;
+    font-size: 4rem;
+    color: #8E443D;
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    border-radius: 20px;
+    background-color: #CB9173;
+}
+
+.wrapper-btn {
+    text-align: center;
+}
+
+button {
+    border: 2px solid #CB9173;
+    transition: background-color 0.3s ease;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 2rem;
+    cursor: pointer;
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    color: #511730;
+}
+
+button:hover {
+    background-color: #8E443D;
+} 
+
+.fouls, .timer-display, .quarter-display {
+    color: #E0D68A;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.scoreboard-header p, .container p {
+    padding-right: 30px;
+    font-size: 1.5rem;
+    font-family: 'Cursed Timer ULiL', sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+
+    h1, h3 {
+        font-size: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .scoreboard-header p {
+        margin: 30px 0;
+        font-size: 1.5rem;
+    }
+
+     .fouls, .timer-display, .quarter-display {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .wrapper-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        margin-top: 1rem;
+        font-size: 16px;
+    }
+    
+}
