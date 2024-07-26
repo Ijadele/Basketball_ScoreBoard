@@ -1,27 +1,32 @@
+/* Reset default margin and padding for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body styling with a dark background and full width */
 body {
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #320A28;
+    background-color: #320A28; /* Dark background color */
 }
 
+/* Header styling for the scoreboard with centered text */
 .scoreboard-header {
     margin: 30px auto;
     text-align: center;
 }
 
+/* Main container to align home and guest sections with a gap between */
 .container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-   
+    justify-content: center;
+    gap: 60px;
+    margin: 0 auto;
 }
 
+/* Wrapper for individual team sections */
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -29,65 +34,89 @@ body {
     justify-content: center;
 }
 
-h3, h1 {
-    color: #E0D68A;
+/* Styling for headers, both h1 and h2, with bold and centered text */
+h1,
+h2 {
+    color: #E0D68A; /* Light yellow color for text */
     font-weight: bold;
     font-size: 2rem;
     text-align: center;
 }
 
-
+/* Styling for the score display with large font and custom font family */
 .score {
     padding: 30px;
     width: 200px;
     text-align: center;
     margin: 40px 0 0;
-    font-size: 4rem;
-    color: #8E443D;
-    font-family: 'Cursed Timer ULiL', sans-serif;
+    font-size: 4rem; /* Large font size for the score */
+    color: #8E443D; /* Dark red color for the score text */
+    font-family: 'Cursed Timer ULiL', sans-serif; /* Custom font */
     border-radius: 20px;
-    background-color: #CB9173;
+    background-color: #CB9173; /* Light brown background color */
 }
 
+/* Wrapper for buttons with centered text */
 .wrapper-btn {
     text-align: center;
 }
 
+/* Button styling with border and hover effect */
 button {
-    border: 2px solid #CB9173;
-    transition: background-color 0.3s ease;
+    border: 2px solid #CB9173; /* Button border color */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
     padding: 5px;
     font-size: 20px;
     margin-top: 2rem;
     cursor: pointer;
-    font-family: 'Cursed Timer ULiL', sans-serif;
-    color: #511730;
+    color: #511730; /* Dark red text color */
 }
 
 button:hover {
-    background-color: #8E443D;
-} 
+    background-color: #8E443D; /* Dark red background on hover */
+}
 
-.fouls, .timer-display, .quarter-display {
-    color: #E0D68A;
+/* Styles for fouls, timer, and quarter display sections with aligned text */
+.fouls,
+.timer-display,
+.quarter-display {
+    color: #E0D68A; /* Light yellow color for text */
     display: flex;
     justify-content: center;
     align-items: baseline;
 }
 
-.scoreboard-header p, .container p {
+/* Styles for paragraph text in the header and container */
+.scoreboard-header p,
+.container p {
     padding-right: 30px;
     font-size: 1.5rem;
-    font-family: 'Cursed Timer ULiL', sans-serif;
 }
 
+/* Custom font for timer and fouls display */
+#timer,
+.fouls span {
+    font-family: 'Cursed Timer ULiL', sans-serif; /* Custom font */
+}
+
+/* Winning class to highlight the leading team */
+.winning {
+    background-color: #10B981; /* Green background for the winning team */
+    color: white; /* White text for better contrast */
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive styles for screens up to 800px */
 @media screen and (max-width: 800px) {
     .container {
-        flex-direction: column;
+        flex-direction: column; /* Stack sections vertically */
     }
 
-    h1, h3 {
-        font-size: 1.5rem;
+    h1,
+    h2 {
+        font-size: 1.5rem; /* Smaller font size for headers */
         margin-top: 2.5rem;
     }
 
@@ -96,8 +125,10 @@ button:hover {
         font-size: 1.5rem;
     }
 
-     .fouls, .timer-display, .quarter-display {
-        display: block;
+    .fouls,
+    .timer-display,
+    .quarter-display {
+        display: block; /* Stacked layout for small screens */
         margin-top: 30px;
     }
 
@@ -110,7 +141,6 @@ button:hover {
 
     button {
         margin-top: 1rem;
-        font-size: 16px;
+        font-size: 16px; /* Smaller font size for buttons */
     }
-    
 }
