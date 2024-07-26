@@ -1,73 +1,70 @@
-// Home functions
-let scoreBoard = document.querySelector('#homers');
+// Score variables
 let homeScore = 0;
-
-function add1() {
-    homeScore += 1;
-    scoreBoard.textContent = homeScore;
-}
-
-function add2() {
-    homeScore += 2;
-    scoreBoard.textContent = homeScore;
-}
-
-function add3() {
-    homeScore += 3;
-    scoreBoard.textContent = homeScore;
-}
-
-function reset() {
-    scoreBoard.textContent = 0;
-    homeScore = 0;
-}
-
-// Guest functions
-let scoreBoard2 = document.querySelector("#guest");
 let guestScore = 0;
-
-function addGuest1() {
-    guestScore += 1;
-    scoreBoard2.textContent = guestScore;
-}
-
-function addGuest2() {
-    guestScore += 2;
-    scoreBoard2.textContent = guestScore;
-}
-
-function addGuest3() {
-    guestScore += 3;
-    scoreBoard2.textContent = guestScore;
-}
-
-function guestReset() {
-    scoreBoard2.textContent = 0;
-    guestScore = 0;
-}
-
-// Foul functions
 let homeFouls = 0;
 let guestFouls = 0;
 
-function addHomeFoul() {
-    homeFouls += 1;
-    document.getElementById('homeFouls').textContent = homeFouls;
+// Function to update the score
+function addPoints(team, points) {
+    if (team === "home") {
+        homeScore += points;
+        document.querySelector('#homers').textContent = homeScore;
+    } else if (team === "guest") {
+        guestScore += points;
+        document.querySelector("#guest").textContent = guestScore;
+    }
+    updateWinningTeam(); // Update winning team visual cue
 }
 
-function resetHomeFouls() {
-    homeFouls = 0;
-    document.getElementById('homeFouls').textContent = homeFouls;
+// Function to reset the score
+function resetScore(team) {
+    if (team === "home") {
+        homeScore = 0;
+        document.querySelector('#homers').textContent = homeScore;
+    } else if (team === "guest") {
+        guestScore = 0;
+        document.querySelector("#guest").textContent = guestScore;
+    }
+    updateWinningTeam(); // Update winning team visual cue
 }
 
-function addGuestFoul() {
-    guestFouls += 1;
-    document.getElementById('guestFouls').textContent = guestFouls;
+// Function to add a foul
+function addFoul(team) {
+    if (team === "home") {
+        homeFouls += 1;
+        document.getElementById('homeFouls').textContent = homeFouls;
+    } else if (team === "guest") {
+        guestFouls += 1;
+        document.getElementById('guestFouls').textContent = guestFouls;
+    }
 }
 
-function resetGuestFouls() {
-    guestFouls = 0;
-    document.getElementById('guestFouls').textContent = guestFouls;
+// Function to reset fouls
+function resetFouls(team) {
+    if (team === "home") {
+        homeFouls = 0;
+        document.getElementById('homeFouls').textContent = homeFouls;
+    } else if (team === "guest") {
+        guestFouls = 0;
+        document.getElementById('guestFouls').textContent = guestFouls;
+    }
+}
+
+// Function to update the winning team's visual cue
+function updateWinningTeam() {
+    const homeScoreElement = document.querySelector('#homers');
+    const guestScoreElement = document.querySelector('#guest');
+
+    // Remove winning class from both teams
+    homeScoreElement.classList.remove('winning');
+    guestScoreElement.classList.remove('winning');
+
+    // Add winning class to the leading team
+    if (homeScore > guestScore) {
+        homeScoreElement.classList.add('winning');
+    } else if (guestScore > homeScore) {
+        guestScoreElement.classList.add('winning');
+    }
 }
 
 // Timer and Quarter functions
